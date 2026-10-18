@@ -3,7 +3,8 @@ require 'redmine'
 Redmine::Plugin.register :redmine_list_macros do
   name 'Redmine List Macros plugin'
   author 'dup2'
-  description 'In-house wiki macros for rendering issue lists from saved queries'
+  description 'Wiki macros for rendering issue lists from saved queries'
+  url 'https://github.com/ncoders/redmine_list_macros'
   version '1.0.0'
   requires_redmine version_or_higher: '5.0'
 end
