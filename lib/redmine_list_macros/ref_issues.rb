@@ -39,7 +39,11 @@ module RedmineListMacros
         content_tag('table', class: 'list issues') do
           thead = content_tag('tr') { safe_join(query.columns.map { |c| content_tag('th', c.caption) }) }
           tbody = safe_join(issues.map { |issue|
-            content_tag('tr') { safe_join(query.columns.map { |c| content_tag('td', column_content(c, issue)) }) }
+            content_tag('tr') {
+              safe_join(query.columns.map { |c|
+                content_tag('td', column_content(c, issue), style: 'text-align: left')
+              })
+            }
           })
           content_tag('thead', thead) + content_tag('tbody', tbody)
         end
